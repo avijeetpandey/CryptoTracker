@@ -20,6 +20,7 @@ class HomeViewController: UIViewController {
     
     // MARK: - Properties
     let viewModel: HomeViewModel
+    private var searchTimer: Timer?
     
     // MARK: - Views
     private lazy var tableView: UITableView = {
@@ -37,6 +38,17 @@ class HomeViewController: UIViewController {
         view.registerCellClass(CryptoCardView.self)
         
         return view
+    }()
+    
+    private lazy var searchField: UITextField = {
+        let field = UITextField()
+        field.translatesAutoresizingMaskIntoConstraints = false
+        field.placeholder = "Enter symbol name to search"
+        field.borderStyle = .none
+        field.delegate = self
+        field.clearButtonMode = .always
+        field.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        return field
     }()
     
     private lazy var loaderView: LoaderView = {
@@ -60,10 +72,6 @@ class HomeViewController: UIViewController {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    @objc func handleResetClick(_ sender: UIBarButtonItem) {
-        
     }
 }
 
@@ -89,11 +97,11 @@ private extension HomeViewController {
         
         navigationItem.title = "Crypto Tracker"
         
+        view.addSubview(searchField)
         view.addSubview(loaderView)
+        view.addSubview(tableView)
         
         loaderView.show()
-        
-        view.addSubview(tableView)
         
         configureConstraints()
     }
@@ -101,10 +109,14 @@ private extension HomeViewController {
     func configureConstraints() {
         NSLayoutConstraint.activate([
             
+            searchField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            searchField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            searchField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            
             loaderView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             loaderView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             
-            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            tableView.topAnchor.constraint(equalTo: searchField.bottomAnchor, constant: 16),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
@@ -158,5 +170,27 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         guard let currenciesViewModel = viewModel.currenciesViewModel else { return UITableViewCell() }
         cell.bind(to: currenciesViewModel[indexPath.item])
         return cell
+    }
+}
+
+// MARK: - UITextField Delegates
+extension HomeViewController: UITextFieldDelegate {
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        searchTimer?.invalidate()
+        searchTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(search), userInfo: nil, repeats: false)
+    }
+    
+    @objc func search() {
+        if let searchText = searchField.text, !searchText.isEmpty {
+            viewModel.search(symbolName: searchText)
+        } else {
+            viewModel.handleReset()
+        }
+    }
+    
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

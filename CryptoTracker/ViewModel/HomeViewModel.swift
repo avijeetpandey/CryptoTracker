@@ -148,4 +148,14 @@ extension HomeViewModel {
     func handleReset() {
         self.currenciesViewModel = copyOfCurrencyViewModel
     }
+    
+    func search(symbolName: String) {
+        let copyOfData = copyOfCurrencyViewModel
+        
+        let filteredData = copyOfData?.filter({ viewModel in
+            return viewModel.subtitle == symbolName
+        })
+        
+        self.currenciesViewModel = filteredData
+    }
 }
