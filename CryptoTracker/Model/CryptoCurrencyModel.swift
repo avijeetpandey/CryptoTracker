@@ -17,7 +17,7 @@ import Foundation
 
 // MARK: - CryptoCurrenciesModel
 struct CryptoCurrenciesModel: Codable {
-    let cryptoCurrencies: [CryptoCurrencyModel]?
+    let cryptoCurrencies: [CryptoCurrencyModel?]
     
     private enum CodingKeys: String, CodingKey {
         case cryptoCurrencies = "cryptocurrencies"
