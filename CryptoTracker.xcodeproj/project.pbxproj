@@ -11,9 +11,6 @@
 		DCE1F3522B87978A00E7F9BC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1F3512B87978A00E7F9BC /* SceneDelegate.swift */; };
 		DCE1F3592B87978A00E7F9BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCE1F3582B87978A00E7F9BC /* Assets.xcassets */; };
 		DCE1F35C2B87978A00E7F9BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCE1F35A2B87978A00E7F9BC /* LaunchScreen.storyboard */; };
-		DCE1F3672B87978A00E7F9BC /* CryptoTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1F3662B87978A00E7F9BC /* CryptoTrackerTests.swift */; };
-		DCE1F3712B87978A00E7F9BC /* CryptoTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1F3702B87978A00E7F9BC /* CryptoTrackerUITests.swift */; };
-		DCE1F3732B87978A00E7F9BC /* CryptoTrackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1F3722B87978A00E7F9BC /* CryptoTrackerUITestsLaunchTests.swift */; };
 		DCE1F3852B87A42600E7F9BC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1F3842B87A42600E7F9BC /* HomeViewController.swift */; };
 		DCE1F3882B87A70A00E7F9BC /* CryptoCurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1F3872B87A70A00E7F9BC /* CryptoCurrencyModel.swift */; };
 		DCE1F38B2B87A88A00E7F9BC /* HttpMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1F38A2B87A88A00E7F9BC /* HttpMethods.swift */; };
@@ -59,10 +56,7 @@
 		DCE1F35B2B87978A00E7F9BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DCE1F35D2B87978A00E7F9BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCE1F3622B87978A00E7F9BC /* CryptoTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptoTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DCE1F3662B87978A00E7F9BC /* CryptoTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTrackerTests.swift; sourceTree = "<group>"; };
 		DCE1F36C2B87978A00E7F9BC /* CryptoTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptoTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DCE1F3702B87978A00E7F9BC /* CryptoTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTrackerUITests.swift; sourceTree = "<group>"; };
-		DCE1F3722B87978A00E7F9BC /* CryptoTrackerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTrackerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		DCE1F3842B87A42600E7F9BC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DCE1F3872B87A70A00E7F9BC /* CryptoCurrencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCurrencyModel.swift; sourceTree = "<group>"; };
 		DCE1F38A2B87A88A00E7F9BC /* HttpMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethods.swift; sourceTree = "<group>"; };
@@ -112,8 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				DCE1F34E2B87978A00E7F9BC /* CryptoTracker */,
-				DCE1F3652B87978A00E7F9BC /* CryptoTrackerTests */,
-				DCE1F36F2B87978A00E7F9BC /* CryptoTrackerUITests */,
 				DCE1F34D2B87978A00E7F9BC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -144,23 +136,6 @@
 				DCE1F35D2B87978A00E7F9BC /* Info.plist */,
 			);
 			path = CryptoTracker;
-			sourceTree = "<group>";
-		};
-		DCE1F3652B87978A00E7F9BC /* CryptoTrackerTests */ = {
-			isa = PBXGroup;
-			children = (
-				DCE1F3662B87978A00E7F9BC /* CryptoTrackerTests.swift */,
-			);
-			path = CryptoTrackerTests;
-			sourceTree = "<group>";
-		};
-		DCE1F36F2B87978A00E7F9BC /* CryptoTrackerUITests */ = {
-			isa = PBXGroup;
-			children = (
-				DCE1F3702B87978A00E7F9BC /* CryptoTrackerUITests.swift */,
-				DCE1F3722B87978A00E7F9BC /* CryptoTrackerUITestsLaunchTests.swift */,
-			);
-			path = CryptoTrackerUITests;
 			sourceTree = "<group>";
 		};
 		DCE1F37F2B87A3D800E7F9BC /* Application */ = {
@@ -412,7 +387,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCE1F3672B87978A00E7F9BC /* CryptoTrackerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,8 +394,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCE1F3732B87978A00E7F9BC /* CryptoTrackerUITestsLaunchTests.swift in Sources */,
-				DCE1F3712B87978A00E7F9BC /* CryptoTrackerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
