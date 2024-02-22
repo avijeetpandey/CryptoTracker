@@ -68,7 +68,7 @@ class HomeViewController: UIViewController {
 private extension HomeViewController {
     func listenToViewModelChanges() {
         viewModel.didCurrenciesViewModelChanged = { [weak self] currenciesViewModel in
-            guard let `self` = self, let currenciesViewModel = currenciesViewModel else { return }
+            guard let `self` = self, let _ = currenciesViewModel else { return }
             DispatchQueue.main.async {
                 self.tableView.isHidden = false
                 self.loaderView.hide()
@@ -81,7 +81,7 @@ private extension HomeViewController {
 // MARK: - SetupUI
 private extension HomeViewController {
     func setupUI() {
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(hex: 0xf5f5f5)
         view.addSubview(loaderView)
         
         loaderView.show()
