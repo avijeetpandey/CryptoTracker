@@ -32,8 +32,16 @@ class HomeViewController: UIViewController {
         view.separatorStyle = .none
         view.showsVerticalScrollIndicator = false
         
+        view.isHidden = true
+        
         view.registerCellClass(CryptoCardView.self)
         
+        return view
+    }()
+    
+    private lazy var loaderView: LoaderView = {
+        let view = LoaderView()
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
@@ -62,6 +70,8 @@ private extension HomeViewController {
         viewModel.didCurrenciesViewModelChanged = { [weak self] currenciesViewModel in
             guard let `self` = self, let currenciesViewModel = currenciesViewModel else { return }
             DispatchQueue.main.async {
+                self.tableView.isHidden = false
+                self.loaderView.hide()
                 self.tableView.reloadData()
             }
         }
@@ -72,6 +82,10 @@ private extension HomeViewController {
 private extension HomeViewController {
     func setupUI() {
         view.backgroundColor = .white
+        view.addSubview(loaderView)
+        
+        loaderView.show()
+        
         view.addSubview(tableView)
         
         configureConstraints()
@@ -79,6 +93,10 @@ private extension HomeViewController {
     
     func configureConstraints() {
         NSLayoutConstraint.activate([
+            
+            loaderView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            loaderView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),

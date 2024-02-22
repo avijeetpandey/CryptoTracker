@@ -29,6 +29,8 @@
 		DCE1F3A12B87D4CC00E7F9BC /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1F3A02B87D4CC00E7F9BC /* Asset.swift */; };
 		DCE1F3A32B87DF1300E7F9BC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1F3A22B87DF1300E7F9BC /* HomeViewModel.swift */; };
 		DCE1F3A52B87E0B500E7F9BC /* ApiPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1F3A42B87E0B500E7F9BC /* ApiPath.swift */; };
+		DCE1F3A72B87EF8A00E7F9BC /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1F3A62B87EF8A00E7F9BC /* LoaderView.swift */; };
+		DCE1F3A92B87F0EA00E7F9BC /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1F3A82B87F0EA00E7F9BC /* UIColor+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		DCE1F3A02B87D4CC00E7F9BC /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		DCE1F3A22B87DF1300E7F9BC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		DCE1F3A42B87E0B500E7F9BC /* ApiPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiPath.swift; sourceTree = "<group>"; };
+		DCE1F3A62B87EF8A00E7F9BC /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
+		DCE1F3A82B87F0EA00E7F9BC /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				DCE1F3972B87B6C900E7F9BC /* CryptoCard.swift */,
+				DCE1F3A62B87EF8A00E7F9BC /* LoaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -234,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				DCE1F39C2B87CF7F00E7F9BC /* UITableView+Extensions.swift */,
+				DCE1F3A82B87F0EA00E7F9BC /* UIColor+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -378,6 +384,7 @@
 				DCE1F3502B87978A00E7F9BC /* AppDelegate.swift in Sources */,
 				DCE1F3882B87A70A00E7F9BC /* CryptoCurrencyModel.swift in Sources */,
 				DCE1F38F2B87A8FD00E7F9BC /* NetworkClient.swift in Sources */,
+				DCE1F3A92B87F0EA00E7F9BC /* UIColor+Extensions.swift in Sources */,
 				DCE1F39D2B87CF7F00E7F9BC /* UITableView+Extensions.swift in Sources */,
 				DCE1F3522B87978A00E7F9BC /* SceneDelegate.swift in Sources */,
 				DCE1F38D2B87A8B800E7F9BC /* NetworkError.swift in Sources */,
@@ -385,6 +392,7 @@
 				DCE1F3A52B87E0B500E7F9BC /* ApiPath.swift in Sources */,
 				DCE1F3982B87B6C900E7F9BC /* CryptoCard.swift in Sources */,
 				DCE1F3852B87A42600E7F9BC /* HomeViewController.swift in Sources */,
+				DCE1F3A72B87EF8A00E7F9BC /* LoaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
