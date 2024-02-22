@@ -28,5 +28,14 @@ Given Below is the folder structure of the application
 - Support to filter coins by various filter methods ( new, token , only coins, etc)
 - Support to search a coin by its `Symbol Name`
 
+## Steps to Run the application
+- git clone `https://github.com/avijeetpandey/CryptoTracker`
+- open the `CryptoTracker.xcodeproj` file on xcode
+- build and run the code using `cmd + R` or build icon
+
+
+## System specs used for development
+- Xcode Versions: `v15.1`
+
 
 PS: Sometimes it may give the error **Server with hostname not found** in that case please, try to **re-run the application** this happens mostly due to an un-stable URL
