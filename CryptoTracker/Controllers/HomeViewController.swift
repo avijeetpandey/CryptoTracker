@@ -23,7 +23,7 @@ class HomeViewController: UIViewController {
     
     // MARK: - Views
     private lazy var tableView: UITableView = {
-       let view = UITableView()
+        let view = UITableView()
         view.translatesAutoresizingMaskIntoConstraints = false
         
         view.delegate = self
@@ -62,6 +62,9 @@ class HomeViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    @objc func handleResetClick(_ sender: UIBarButtonItem) {
+        
+    }
 }
 
 // MARK: - ViewModel listeners
@@ -82,6 +85,11 @@ private extension HomeViewController {
 private extension HomeViewController {
     func setupUI() {
         view.backgroundColor = UIColor(hex: 0xf5f5f5)
+        
+        navigationItem.title = "Crypto Tracker"
+        
+        configureMenu()
+        
         view.addSubview(loaderView)
         
         loaderView.show()
@@ -102,6 +110,32 @@ private extension HomeViewController {
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+    }
+    
+    func configureMenu() {
+        let activeCoinsMenuItem = UIAction(title: FilterType.activeCoins.rawValue) { [weak self] _ in
+            guard let `self` = self else { return }
+            viewModel.filter(by: .activeCoins)
+        }
+        
+        let onlyCoinsMenuItem = UIAction(title: FilterType.onlyCoins.rawValue) { [weak self] _ in
+            guard let `self` = self else { return }
+            viewModel.filter(by: .onlyCoins)
+        }
+        
+        let onlyTokensMenuItem = UIAction(title: FilterType.onlyTokens.rawValue) { [weak self] _ in
+            guard let `self` = self else { return }
+            viewModel.filter(by: .onlyTokens)
+        }
+        
+        let newCryptoMenuItem = UIAction(title: FilterType.newCrypto.rawValue) { [weak self] _ in
+            guard let `self` = self else { return }
+            viewModel.filter(by: .newCrypto)
+        }
+        
+        let menu = UIMenu(title: "", children: [activeCoinsMenuItem, onlyCoinsMenuItem ,onlyTokensMenuItem, newCryptoMenuItem])
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: nil, image: UIImage.actions, primaryAction: nil, menu: menu)
     }
 }
 

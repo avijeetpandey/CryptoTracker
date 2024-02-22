@@ -29,6 +29,10 @@ class HomeViewModel {
     func viewDidLoaded() {
         getCryptoInfo()
     }
+    
+    func refresh() {
+        getCryptoInfo()
+    }
 }
 
 // MARK: - API Call
@@ -65,5 +69,12 @@ private extension HomeViewModel {
         })
         
         self.currenciesViewModel = currenciesVM
+    }
+}
+
+// MARK: - ViewModel Filters
+extension HomeViewModel {
+    func filter(by filterType: FilterType) {
+        
     }
 }
