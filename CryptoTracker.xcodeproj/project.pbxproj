@@ -22,6 +22,13 @@
 		DCE1F3922B87A99C00E7F9BC /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1F3912B87A99C00E7F9BC /* Requestable.swift */; };
 		DCE1F3942B87B2BF00E7F9BC /* NetworkRequestObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1F3932B87B2BF00E7F9BC /* NetworkRequestObject.swift */; };
 		DCE1F3962B87B2F900E7F9BC /* NetworkRequestObjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1F3952B87B2F900E7F9BC /* NetworkRequestObjectProtocol.swift */; };
+		DCE1F3982B87B6C900E7F9BC /* CryptoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1F3972B87B6C900E7F9BC /* CryptoCard.swift */; };
+		DCE1F39A2B87C9A900E7F9BC /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1F3992B87C9A900E7F9BC /* Bindable.swift */; };
+		DCE1F39D2B87CF7F00E7F9BC /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1F39C2B87CF7F00E7F9BC /* UITableView+Extensions.swift */; };
+		DCE1F39F2B87D30700E7F9BC /* CryptoCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1F39E2B87D30700E7F9BC /* CryptoCardViewModel.swift */; };
+		DCE1F3A12B87D4CC00E7F9BC /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1F3A02B87D4CC00E7F9BC /* Asset.swift */; };
+		DCE1F3A32B87DF1300E7F9BC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1F3A22B87DF1300E7F9BC /* HomeViewModel.swift */; };
+		DCE1F3A52B87E0B500E7F9BC /* ApiPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1F3A42B87E0B500E7F9BC /* ApiPath.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +68,13 @@
 		DCE1F3912B87A99C00E7F9BC /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
 		DCE1F3932B87B2BF00E7F9BC /* NetworkRequestObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestObject.swift; sourceTree = "<group>"; };
 		DCE1F3952B87B2F900E7F9BC /* NetworkRequestObjectProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestObjectProtocol.swift; sourceTree = "<group>"; };
+		DCE1F3972B87B6C900E7F9BC /* CryptoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCard.swift; sourceTree = "<group>"; };
+		DCE1F3992B87C9A900E7F9BC /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
+		DCE1F39C2B87CF7F00E7F9BC /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		DCE1F39E2B87D30700E7F9BC /* CryptoCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCardViewModel.swift; sourceTree = "<group>"; };
+		DCE1F3A02B87D4CC00E7F9BC /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
+		DCE1F3A22B87DF1300E7F9BC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		DCE1F3A42B87E0B500E7F9BC /* ApiPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiPath.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,8 +125,9 @@
 		DCE1F34E2B87978A00E7F9BC /* CryptoTracker */ = {
 			isa = PBXGroup;
 			children = (
+				DCE1F39B2B87CF7000E7F9BC /* Extensions */,
 				DCE1F3902B87A96400E7F9BC /* Protocols */,
-				DCE1F3892B87A87D00E7F9BC /* ApiManager */,
+				DCE1F3892B87A87D00E7F9BC /* Networking */,
 				DCE1F3862B87A6FA00E7F9BC /* Model */,
 				DCE1F3832B87A3F900E7F9BC /* ViewModel */,
 				DCE1F3822B87A3F000E7F9BC /* Controllers */,
@@ -155,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				DCE1F3582B87978A00E7F9BC /* Assets.xcassets */,
+				DCE1F3A02B87D4CC00E7F9BC /* Asset.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -162,6 +178,7 @@
 		DCE1F3812B87A3EB00E7F9BC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DCE1F3972B87B6C900E7F9BC /* CryptoCard.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -177,6 +194,8 @@
 		DCE1F3832B87A3F900E7F9BC /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				DCE1F39E2B87D30700E7F9BC /* CryptoCardViewModel.swift */,
+				DCE1F3A22B87DF1300E7F9BC /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -189,15 +208,16 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		DCE1F3892B87A87D00E7F9BC /* ApiManager */ = {
+		DCE1F3892B87A87D00E7F9BC /* Networking */ = {
 			isa = PBXGroup;
 			children = (
 				DCE1F38A2B87A88A00E7F9BC /* HttpMethods.swift */,
 				DCE1F38C2B87A8B800E7F9BC /* NetworkError.swift */,
 				DCE1F38E2B87A8FD00E7F9BC /* NetworkClient.swift */,
 				DCE1F3932B87B2BF00E7F9BC /* NetworkRequestObject.swift */,
+				DCE1F3A42B87E0B500E7F9BC /* ApiPath.swift */,
 			);
-			path = ApiManager;
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		DCE1F3902B87A96400E7F9BC /* Protocols */ = {
@@ -205,8 +225,17 @@
 			children = (
 				DCE1F3912B87A99C00E7F9BC /* Requestable.swift */,
 				DCE1F3952B87B2F900E7F9BC /* NetworkRequestObjectProtocol.swift */,
+				DCE1F3992B87C9A900E7F9BC /* Bindable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		DCE1F39B2B87CF7000E7F9BC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DCE1F39C2B87CF7F00E7F9BC /* UITableView+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,13 +370,20 @@
 			files = (
 				DCE1F38B2B87A88A00E7F9BC /* HttpMethods.swift in Sources */,
 				DCE1F3942B87B2BF00E7F9BC /* NetworkRequestObject.swift in Sources */,
+				DCE1F39A2B87C9A900E7F9BC /* Bindable.swift in Sources */,
+				DCE1F3A32B87DF1300E7F9BC /* HomeViewModel.swift in Sources */,
 				DCE1F3922B87A99C00E7F9BC /* Requestable.swift in Sources */,
 				DCE1F3962B87B2F900E7F9BC /* NetworkRequestObjectProtocol.swift in Sources */,
+				DCE1F39F2B87D30700E7F9BC /* CryptoCardViewModel.swift in Sources */,
 				DCE1F3502B87978A00E7F9BC /* AppDelegate.swift in Sources */,
 				DCE1F3882B87A70A00E7F9BC /* CryptoCurrencyModel.swift in Sources */,
 				DCE1F38F2B87A8FD00E7F9BC /* NetworkClient.swift in Sources */,
+				DCE1F39D2B87CF7F00E7F9BC /* UITableView+Extensions.swift in Sources */,
 				DCE1F3522B87978A00E7F9BC /* SceneDelegate.swift in Sources */,
 				DCE1F38D2B87A8B800E7F9BC /* NetworkError.swift in Sources */,
+				DCE1F3A12B87D4CC00E7F9BC /* Asset.swift in Sources */,
+				DCE1F3A52B87E0B500E7F9BC /* ApiPath.swift in Sources */,
+				DCE1F3982B87B6C900E7F9BC /* CryptoCard.swift in Sources */,
 				DCE1F3852B87A42600E7F9BC /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
