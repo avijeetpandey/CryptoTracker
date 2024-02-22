@@ -75,6 +75,7 @@ private extension HomeViewController {
             DispatchQueue.main.async {
                 self.tableView.isHidden = false
                 self.loaderView.hide()
+                self.configureMenu()
                 self.tableView.reloadData()
             }
         }
@@ -87,8 +88,6 @@ private extension HomeViewController {
         view.backgroundColor = UIColor(hex: 0xf5f5f5)
         
         navigationItem.title = "Crypto Tracker"
-        
-        configureMenu()
         
         view.addSubview(loaderView)
         
