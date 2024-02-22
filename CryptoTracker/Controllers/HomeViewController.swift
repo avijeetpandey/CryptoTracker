@@ -133,7 +133,12 @@ private extension HomeViewController {
             viewModel.filter(by: .newCrypto)
         }
         
-        let menu = UIMenu(title: "", children: [activeCoinsMenuItem, onlyCoinsMenuItem ,onlyTokensMenuItem, newCryptoMenuItem])
+        let resetMenuItem = UIAction(title: FilterType.reset.rawValue) { [weak self] _ in
+            guard let `self` = self else { return }
+            viewModel.filter(by: .reset)
+        }
+        
+        let menu = UIMenu(title: "", children: [activeCoinsMenuItem, onlyCoinsMenuItem ,onlyTokensMenuItem, newCryptoMenuItem, resetMenuItem])
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: nil, image: UIImage.actions, primaryAction: nil, menu: menu)
     }

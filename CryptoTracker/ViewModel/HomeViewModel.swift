@@ -17,6 +17,9 @@ class HomeViewModel {
         }
     }
     
+    // To store the copy of existing data in order to avoid extra api call in case of other filters
+    var copyOfCurrencyViewModel: [CryptoCardViewModel]?
+    
     // MARK: - Listeners
     var didCurrenciesViewModelChanged: (([CryptoCardViewModel]?) -> Void)?
     
@@ -69,12 +72,80 @@ private extension HomeViewModel {
         })
         
         self.currenciesViewModel = currenciesVM
+        self.copyOfCurrencyViewModel = currenciesVM
     }
 }
 
 // MARK: - ViewModel Filters
 extension HomeViewModel {
     func filter(by filterType: FilterType) {
+        switch filterType {
+        case .activeCoins:
+            handleActiveCoins()
+        case .newCrypto:
+            handleNewCrypto()
+        case .onlyCoins:
+            handleOnlyCoins()
+        case .onlyTokens:
+            handleOnlyToken()
+        case .reset:
+            handleReset()
+        }
+    }
+    
+    
+    // filters only the active coins
+    func handleActiveCoins() {
+        let copyOfData = copyOfCurrencyViewModel
         
+        
+        let filteredData = copyOfData?.filter({ viewModel in
+            return viewModel.isActive == true
+        })
+
+        self.currenciesViewModel = filteredData
+    }
+    
+    // filters only new crypto coins
+    func handleNewCrypto() {
+        let copyOfData = copyOfCurrencyViewModel
+        
+        
+        let filteredData = copyOfData?.filter({ viewModel in
+            return viewModel.isNew == true
+        })
+        
+        
+        self.currenciesViewModel = filteredData
+    }
+    
+    // filters only coins
+    func handleOnlyCoins() {
+        let copyOfData = copyOfCurrencyViewModel
+        
+        
+        let filteredData = copyOfData?.filter({ viewModel in
+            return viewModel.type == "coin"
+        })
+        
+        
+        self.currenciesViewModel = filteredData
+    }
+    
+    // filters only token
+    func handleOnlyToken() {
+        let copyOfData = copyOfCurrencyViewModel
+        
+        
+        let filteredData = copyOfData?.filter({ viewModel in
+            return viewModel.type == "token"
+        })
+        
+        
+        self.currenciesViewModel = filteredData
+    }
+    
+    func handleReset() {
+        self.currenciesViewModel = copyOfCurrencyViewModel
     }
 }

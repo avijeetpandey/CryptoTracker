@@ -13,4 +13,5 @@ enum FilterType: String {
     case onlyTokens = "Only Tokens"
     case onlyCoins = "Only Coins"
     case newCrypto = "New Crypto"
+    case reset = "Reset"
 }
