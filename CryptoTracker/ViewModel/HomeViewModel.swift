@@ -32,10 +32,6 @@ class HomeViewModel {
     func viewDidLoaded() {
         getCryptoInfo()
     }
-    
-    func refresh() {
-        getCryptoInfo()
-    }
 }
 
 // MARK: - API Call
