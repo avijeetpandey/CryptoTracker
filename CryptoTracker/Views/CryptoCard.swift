@@ -19,6 +19,15 @@ class CryptoCardView: UITableViewCell {
         return view
     }()
     
+    private lazy var newRibbonImage: UIImageView = {
+        let view = UIImageView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.contentMode = .scaleAspectFit
+        view.image = .new
+        view.isHidden = true
+        return view
+    }()
+    
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -51,6 +60,12 @@ extension CryptoCardView: Bindable {
         cryptoImageView.image = viewModel.image
         titleLabel.text = viewModel.title
         subtitleLabel.text = viewModel.subtitle
+        
+        if(viewModel.isNew) {
+            newRibbonImage.isHidden = false
+        } else {
+            newRibbonImage.isHidden = true
+        }
     }
 }
 
@@ -59,8 +74,10 @@ private extension CryptoCardView {
     
     func setupUI() {
         addSubview(cryptoImageView)
+        addSubview(newRibbonImage)
         addSubview(titleLabel)
         addSubview(subtitleLabel)
+        
         
         selectionStyle = .none
         
@@ -77,11 +94,17 @@ private extension CryptoCardView {
             subtitleLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             subtitleLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
             
+            
+            newRibbonImage.topAnchor.constraint(equalTo: titleLabel.topAnchor),
+            newRibbonImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            newRibbonImage.heightAnchor.constraint(equalToConstant: 20),
+            newRibbonImage.widthAnchor.constraint(equalToConstant: 20),
+            
             cryptoImageView.topAnchor.constraint(equalTo: titleLabel.topAnchor),
             cryptoImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             cryptoImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
             cryptoImageView.heightAnchor.constraint(equalToConstant: 40),
-            cryptoImageView.widthAnchor.constraint(equalToConstant: 40)
+            cryptoImageView.widthAnchor.constraint(equalToConstant: 40),
         ])
     }
 }
